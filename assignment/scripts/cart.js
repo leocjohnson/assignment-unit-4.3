@@ -73,6 +73,25 @@ addItem('matches');
 
 addItem('money');
 
+function removeItem(item){
+    console.log(' - In function removeItem - ');
+    if(basket.includes(item)===true){
+        console.log(item, 'has been found in the basket.');
+        basket.splice(basket.indexOf(item), 1);
+        console.log(item, 'has been removed from the basket.');
+        return item;
+    }else{
+        console.log(item, 'was not found in the basket.')
+        return null;
+    }   
+}
+
+removeItem('salmon');
+
+listItems();
+
+removeItem('oranges');
+
 console.log('----- testing code below -----');
 // DO NOT MODIFY
 // Used for automated testing
