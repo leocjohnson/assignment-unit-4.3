@@ -7,6 +7,7 @@ let basket = [];
 function addItem(item){
     console.log('in function addItem');
     basket.push(item);
+    console.log('Basket now contains:', basket);
     return true;
 }
 
@@ -16,7 +17,7 @@ function addItem(item){
 
 
 
-
+console.log('--- testing code below ---');
 // DO NOT MODIFY
 // Used for automated testing
 try {
