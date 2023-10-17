@@ -3,12 +3,21 @@ console.log('***** Cart Functions *****');
 // We want to see how you are testing your code!!!
 
 let basket = [];
+console.log('Here is our basket!', basket)
+
+const maxItems = 5;
+console.log('The maximum number of items is', maxItems)
 
 function addItem(item){
     console.log(' - In function addItem. - ');
-    basket.push(item);
-    console.log('Added', item, 'to basket.');
-    return true;
+    if(isFull()===false){
+        basket.push(item);
+        console.log('Added', item, 'to basket.');
+        return true;
+    }else{
+        console.log('Sorry, the basket is full! There is no room for', item);
+        return false;
+    }
 }
 
 addItem('banana');
@@ -40,7 +49,31 @@ function empty(){
 
 empty()
 
-console.log('--- testing code below ---');
+function isFull(){
+    console.log(' - In function isFull - ');
+    if(basket.length<maxItems){
+        console.log('The basket is not full.');
+        return false;
+    }else if(basket.length>=maxItems){
+        console.log('The basket is full.');
+        return true;
+    }
+}
+
+isFull();
+
+addItem('salmon');
+addItem('tuna');
+addItem('beef');
+
+listItems();
+
+addItem('wood');
+addItem('matches');
+
+addItem('money');
+
+console.log('----- testing code below -----');
 // DO NOT MODIFY
 // Used for automated testing
 try {
