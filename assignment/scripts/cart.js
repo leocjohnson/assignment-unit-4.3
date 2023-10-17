@@ -5,17 +5,40 @@ console.log('***** Cart Functions *****');
 let basket = [];
 
 function addItem(item){
-    console.log('in function addItem');
+    console.log(' - In function addItem. - ');
     basket.push(item);
-    console.log('Basket now contains:', basket);
+    console.log('Added', item, 'to basket.');
     return true;
 }
 
+addItem('banana');
+addItem('oranges');
+addItem('bread');
 
+function listItems(){
+    console.log(' - In function listItems. - ');
+    if(basket.length>0){
+        console.log('The basket currently contains:');
+        for(let item of basket){
+            console.log(item);
+        }
+    }else{
+        console.log('The basket is empty.');
+    }
+}
 
+listItems();
 
+function empty(){
+    console.log(' - In function empty. - ');
+    while(basket.length>0){
+        basket.pop();
+    }
+    console.log('The basket has been emptied! Take a look:');
+    console.log('Basket:', basket);
+}
 
-
+empty()
 
 console.log('--- testing code below ---');
 // DO NOT MODIFY
